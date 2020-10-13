@@ -1,5 +1,4 @@
 from django.core.cache import caches
-from django.core.cache.backends.locmem import LocMemCache
 from django.core.exceptions import ImproperlyConfigured
 from django.db import (
     IntegrityError,
