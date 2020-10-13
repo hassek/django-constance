@@ -28,12 +28,6 @@ class DatabaseBackend(Backend):
 
         if settings.DATABASE_CACHE_BACKEND:
             self._cache = caches[settings.DATABASE_CACHE_BACKEND]
-            if isinstance(self._cache, LocMemCache):
-                raise ImproperlyConfigured(
-                    "The CONSTANCE_DATABASE_CACHE_BACKEND setting refers to a "
-                    "subclass of Django's local-memory backend (%r). Please "
-                    "set it to a backend that supports cross-process caching."
-                    % settings.DATABASE_CACHE_BACKEND)
         else:
             self._cache = None
         self.autofill()
